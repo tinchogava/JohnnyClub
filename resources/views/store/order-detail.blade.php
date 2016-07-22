@@ -1,4 +1,4 @@
-@extends('store.template')
+@extends('templates.template')
 
 @section('content')
 {!!
@@ -26,17 +26,8 @@
 					<tr>
 						<td colspan = "2">
 							<label for = "changeAddress"> ¿Desea cambiar la dirección del envío?&nbsp;</label>
-								{!!
-								 	Form::checkbox(
-								 			'check',
-								 			null,
-								 			false,
-								 			array(
-								 				'id' => 'check',
-								 				'class' => 'showContent'
-								 			)
-								 	)
-								!!}
+							<input type="checkbox" id = "changeAddress" class = "showContent">
+								
 						</td>
 					</tr>
 					<tr id = "content1" style="display: none;">

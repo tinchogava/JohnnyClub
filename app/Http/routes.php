@@ -30,6 +30,11 @@ Route::bind('varietal', function($varietal){
 	return App\Varietal::find($varietal);
 });
 
+//Injeccion de Dependencias de usuarios 
+Route::bind('user', function($user){
+	return App\User::find($user);
+});
+
 
 
 Route::get('/', [
@@ -55,6 +60,10 @@ Route::group(['middleware' => ['web']], function () {
 		'uses'	=> 'StoreController@index'
 	]);
 
+	Route::get('/home', 'HomeController@index');
+
+	//Product Routes
+
 	Route::get('products', [
 		'as' 	=> 'products-index',
 		'uses' 	=> 'ProductController@index'
@@ -71,10 +80,14 @@ Route::group(['middleware' => ['web']], function () {
 		'uses' => 'ProductController@viewPrimer'
 		]);
 
+	//Categories Routes
+
 	Route::get('categories', [
 	'as' 	=> 'categories-index',
 	'uses' 	=> 'CategoryController@index'
 	 ]);
+
+	//Cart routes
 
 	Route::get('cart/show', [
 		'as' => 'cart-show',
@@ -124,7 +137,7 @@ Route::group(['middleware' => ['web']], function () {
 		'uses' => 'CartController@orderDetail'
 	]);
 
-	Route::get('/home', 'HomeController@index');
+	//Login Routes
 
 	Route::get('login', [
 		'as' => 'auth.login', 
@@ -168,7 +181,7 @@ Route::group(['middleware' => ['web']], function () {
 		'uses' => 'Auth\PasswordController@reset'
 	]);
 
-	//ADMIN ROUTES
+	//Admin Routes
 
 	Route::get('admin/home', function() {
 		return view('admin.home');
@@ -184,11 +197,11 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::resource('admin/user', 'Admin\UserController');
 
-	Route::get('backend', [
-		'as' => 'auth.admin',
-		'uses' => 'Auth\AuthController@login'
-		]);
+	Route::post('backend', function() {
+		return view('auth.login');
+	});
 
+	//Return MercadoPago
 	Route::get('checkout/approvedPayment', function(){
 		return view('store.confirm');
 	});

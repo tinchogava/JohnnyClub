@@ -7,8 +7,8 @@
 			<h1>
 				<i class = "fa fa-list-alt"></i>
 				CATEGORÍAS <br>
-				<a href="{{ route('admin.category.create') }}" class="btn btn-warning"><i class = "fa fa-plus-circle"> Categoría</i></a>
 			</h1>
+			<a href="{{ route('admin.category.create') }}" class="btn btn-warning"><i class = "fa fa-plus-circle"> Categoría</i></a>
 		</div>
 			<div class = "page">
 				<div class = "table-responsive">
@@ -29,7 +29,7 @@
 								<td>{{ $category->description }}</td>
 								<td><input type ="color" value = "{{ $category->color }}" disabled = "disabled"></td>
 								<td>
-									<a href="{{ route('admin.category.edit', $category) }}" class = "btn btn-primary">
+									<a href="{{ route('admin.category.edit', $category) }}" class = "btn btn-info">
 										<i class ="fa fa-pencil-square">
 										</i>
 									</a>
@@ -51,4 +51,5 @@
 					!!}
 				</div>
 			</div>
+		</div>
 @stop

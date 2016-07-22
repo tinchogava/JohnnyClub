@@ -18,7 +18,8 @@ $(document).ready(function() {
 		window.location.href = href + "/cart/update/" + id + "/" + quantity
 	});
 
-	$("#check").on( "click", function() {
+	//$("#changeAddress").checkboxpicker();
+	$("#changeAddress").on( "click", function() {
         check = document.getElementById("check");
         if (check.checked) {
         	for(i = 0; i < 100; i ++){

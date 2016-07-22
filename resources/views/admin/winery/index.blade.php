@@ -5,9 +5,10 @@
 	<div class = "container text-center">
 		<div class ="page-header">
 			<h1>
-				<i class = "fa-fa-shopping-cart"></i>
-				BODEGAS <a href="{{ route('admin.winery.create') }}" class="btn btn-warning"><i class = "fa fa-plus-circle"> Bodega</i></a>
+				<i class = "fa fa-shopping-cart"></i>
+				BODEGAS <br>
 			</h1>
+			<a href="{{ route('admin.winery.create') }}" class="btn btn-warning"><i class = "fa fa-plus-circle"> Bodega</i></a>
 		</div>
 		<div class = "table-responsive">
 			<table class ="table table-striped table-bordered table-hover">
@@ -31,7 +32,7 @@
 							<td>{{ $winery->state->name }}</td>
 							<td>{{ $winery->country->name }}</td>
 							<td>
-								<a href="{{ route('admin.winery.edit', $winery) }}" class = "btn btn-primary">
+								<a href="{{ route('admin.winery.edit', $winery) }}" class = "btn btn-info">
 									<i class ="fa fa-pencil-square"></i>
 								</a>
 							</td>
@@ -48,4 +49,5 @@
 				</tbody>
 			</table>
 		</div>
+	</div>
 @stop

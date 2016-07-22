@@ -157,7 +157,7 @@
 								)
 							)
 						!!}
-						<a href="{{ route('admin.category.index') }}" class = "btn btn-warning">Cancelar</a>
+						<a href="{{ route('admin.product.index') }}" class = "btn btn-warning">Cancelar</a>
 					</div>
 
 					{!!

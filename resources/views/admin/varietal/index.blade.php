@@ -6,8 +6,9 @@
 		<div class ="page-header">
 			<h1>
 				<i class = "fa fa-glass icon-home"></i>
-				VARIETALES <a href="{{ route('admin.varietal.create') }}" class="btn btn-warning"><i class = "fa fa-plus-circle"> Varietal</i></a>
+				VARIETALES <br>
 			</h1>
+			<a href="{{ route('admin.varietal.create') }}" class="btn btn-warning"><i class = "fa fa-plus-circle"> Varietal</i></a>
 		</div>
 		<div class = "table-responsive">
 			<table class ="table table-striped table-bordered table-hover">
@@ -25,7 +26,7 @@
 						<td>{{ $varietal->name }}</td>
 						<td>{{ $varietal->description }}</td>
 						<td>
-							<a href="{{ route('admin.varietal.edit', $varietal) }}" class = "btn btn-primary">
+							<a href="{{ route('admin.varietal.edit', $varietal) }}" class = "btn btn-info">
 								<i class ="fa fa-pencil-square"></i>
 							</a>
 						</td>
@@ -45,5 +46,6 @@
 				$varietals->render()
 			!!}
 		</div>
+	</div>
 	
 @stop

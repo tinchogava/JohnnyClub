@@ -7,7 +7,7 @@
 			<h1><i class = fa fa-rocket></i>Johnny Club - DASHBOARD</h1>
 		</div>
 
-		<h2>Bienvenido al Panel de administración de Johnny Club</h2><hr>
+		<h2>Bienvenido al Panel de administración de Johnny Club</h2>
 
 		<div class = "row">
 			<div class = "col-md-6">

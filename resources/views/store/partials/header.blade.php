@@ -29,9 +29,7 @@
                                           <div class="collapse navbar-collapse navbar-left">
                                                 <ul class="nav navbar-nav">
                                                       <li><a href="{{route('cart-show')}}"><i class ="fa fa-shopping-cart"></i>&nbsp;({{ $cart->cartCount() }})<span class="sr-only"></span></a></li>
-                                                      <li class = "dropdown">
-                                                        @include('store.partials.menu-user')
-                                                      </li>                                      
+                                                                                          
                                                 </ul>                                      
                                           </div>
                                     </div>      

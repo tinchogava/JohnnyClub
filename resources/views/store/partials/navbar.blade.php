@@ -17,14 +17,12 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                        <li class="active"><a href="{{ route('home') }}">Home</a></li>
-          <li><a href="{{ route('products-index') }}">Productos</a></li>
-          <a href="{{ route('categories-index') }}">
+          <li><a href="{{ route('products-index') }}">Productos</a></li>      
           <li class="dropdown">
             <a href="{{ route('categories-index') }}" class="dropdown-toggle" data-toggle="dropdown">
               Categorías
               <i class="fa fa-angle-down"></i>
             </a>
-          </a>
             <ul class="dropdown-menu">
               @foreach($categories->getAll() as $category)
                  <li><a href="{{ route('home') }}">{{ $category->name}}</a></li>
@@ -52,6 +50,9 @@
                 <li><a href="{{ route('home') }}">{{ $varietal->name }}</a></li>
               @endforeach
             </ul>
+            <li class = "dropdown">
+                                                        @include('store.partials.menu-user')
+                                                      </li>  
           </li>                      
                     </ul>
                 </div>

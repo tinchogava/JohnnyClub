@@ -20,11 +20,11 @@ class ProductController extends Controller
 
    public function detail($id){
 		$product = Product::where('id', $id)->first();
-		return \View::make('product.show')->with('product', $product);
+		return \View::make('product.detail')->with('product', $product);
 	}
 
 	public function viewPrimer($product){
-		return response()->file($product->description_file, 'Cartilla de Degustación');
+		return response()->file($product->description_file);
 	}
 
 	public static function updateRank(Product $product){
