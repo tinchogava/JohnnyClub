@@ -8,7 +8,7 @@
 				<i class = "fa fa-list-alt"></i>
 				CATEGORÍAS <br>
 			</h1>
-			<a href="{{ route('admin.category.create') }}" class="btn btn-warning"><i class = "fa fa-plus-circle"> Categoría</i></a>
+			<a href="{{ route('admin.category.create') }}" class="btn btn-warning"><i class = "fa fa-plus-circle"></i> Categoría</a>
 		</div>
 			<div class = "page">
 				<div class = "table-responsive">

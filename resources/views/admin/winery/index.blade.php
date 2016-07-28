@@ -8,7 +8,7 @@
 				<i class = "fa fa-shopping-cart"></i>
 				BODEGAS <br>
 			</h1>
-			<a href="{{ route('admin.winery.create') }}" class="btn btn-warning"><i class = "fa fa-plus-circle"> Bodega</i></a>
+			<a href="{{ route('admin.winery.create') }}" class="btn btn-warning"><i class = "fa fa-plus-circle"></i> Bodega</a>
 		</div>
 		<div class = "table-responsive">
 			<table class ="table table-striped table-bordered table-hover">

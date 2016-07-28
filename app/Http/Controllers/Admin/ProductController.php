@@ -48,8 +48,9 @@ class ProductController extends Controller
      */
     public function store(SaveProductRequest $request)
     {
-        $image = $request->get('image') ? $request->get('image') : 'img/no-image.png';
-        $visible = $request->get('visible') ? $request->get('visible') : 1;
+        $image = $request->file('image') ? \Request::file('image') : null;
+        $description_file = $request->file('description_file') ? \Request::file('description_file') : null;
+        $visible = $request->get('visible') ? 1 : 0;
 
         $product = Product::create([
             'name' => $request->get('name'),
@@ -57,6 +58,7 @@ class ProductController extends Controller
             'size' => $request->get('size'),
             'price' => $request->get('price'),
             'image' => $image,
+            'description_file' => $description_file,
             'visible' => $visible,
             'category_id' => $request->get('category_id'),
             'varietal_id' => $request->get('varietal_id'),

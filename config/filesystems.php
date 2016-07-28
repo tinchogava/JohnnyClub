@@ -54,6 +54,18 @@ return [
             'visibility' => 'public',
         ],
 
+        'image' => [
+            'driver' => 'local',
+            'root' => public_path('img/products'),
+            'visibility' => 'public',
+        ],
+
+        'pdf' => [
+            'driver' => 'local',
+            'root' => public_path('pdf/products'),
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => 'your-key',

@@ -7,7 +7,7 @@
                             <div class="parrent pull-left">
                                 <ul class="nav nav-tabs nav-stacked">
                                     <li class="active"><a href="#tab1" data-toggle="tab" class="analistic-01">Medios de Pago</a></li>
-                                    <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Acreditación Inmediata</a></li>
+                                    <li class=""><a href="#tab2" data-toggle="tab" class="analistic-01">Acreditación Inmediata</a></li>
                                     
                                 </ul>
                             </div>

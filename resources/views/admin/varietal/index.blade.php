@@ -8,7 +8,7 @@
 				<i class = "fa fa-glass icon-home"></i>
 				VARIETALES <br>
 			</h1>
-			<a href="{{ route('admin.varietal.create') }}" class="btn btn-warning"><i class = "fa fa-plus-circle"> Varietal</i></a>
+			<a href="{{ route('admin.varietal.create') }}" class="btn btn-warning"><i class = "fa fa-plus-circle"></i> Varietal</a>
 		</div>
 		<div class = "table-responsive">
 			<table class ="table table-striped table-bordered table-hover">
