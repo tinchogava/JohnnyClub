@@ -8,7 +8,7 @@
 				<i class = "fa fa-shopping-cart"></i>
 				PRODUCTOS<br>
 			</h1>
-			<a href="{{ route('admin.product.create') }}" class="btn btn-warning"><i class = "fa fa-plus-circle"> Producto</i></a>
+			<a href="{{ route('admin.product.create') }}" class ="btn btn-warning"><i class = "fa fa-plus-circle"></i> Producto</a>
 		</div>
 		<div class = "page">
 			<div class = "table-responsive">
@@ -33,8 +33,8 @@
 					<tr>
 						<td>{{ $product->name }}</td>
 						<td>{{ $product->description }}</td>
-						<td>{{ $product->size }}</td>
-						<td>{{ number_format($product->price, 2) }}</td>
+						<td>{{ $product->size }} cc</td>
+						<td>${{ number_format($product->price, 2) }}</td>
 						<td><img class = "product-list" src="{{ asset($product->image) }}"></td>
 						<td>
 							{!!  Form::model($product, array('route' => array('admin.product.update', $product))) !!} 

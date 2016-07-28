@@ -20,7 +20,7 @@ $(document).ready(function() {
 
 	//$("#changeAddress").checkboxpicker();
 	$("#changeAddress").on( "click", function() {
-        check = document.getElementById("check");
+        check = document.getElementById("changeAddress");
         if (check.checked) {
         	for(i = 0; i < 100; i ++){
         		$('#content'+i).show();

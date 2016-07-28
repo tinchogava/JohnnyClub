@@ -104,6 +104,23 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+
+        'winery_id' => 'Bodega',
+        'category_id' => 'Categoría',
+        'varietal_id' => 'Varietal',
+        'email' => 'Correo Electrónico',
+        'password' => 'Contraseña',
+        'name' => 'Nombre',
+        'price' => 'Precio',
+        'zip_code' => 'Código Postal',
+        'image' => 'Imagen',
+        'size' => 'Tamaño',
+        'description' => 'Descripción',
+        'visible' => 'Stock',
+
+
+
+    ],
 
 ];

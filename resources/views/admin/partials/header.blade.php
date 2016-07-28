@@ -10,7 +10,7 @@
                                     </div>
                                      <div class="col-sm-6 col-xs-4 center">
                                       <h6>
-                                       <i class = "fa fa-dashboard icon-home">Dashboard</i>
+                                       Dashboard <i class = "fa fa-dashboard icon-home"></i> Administración
                                       </h6>
                                      </div>
                                     <div class="col-sm-3 col-xs-8">

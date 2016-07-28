@@ -1,6 +1,9 @@
 @extends('admin.template')
 
 @section('content')
+{!!
+	Html::style('css/numberFormat.css')
+!!}
 	<div class = "container text-center">
 		<div class = "page-header">
 			<h1>
@@ -15,7 +18,8 @@
 						@include('admin.partials.errors')
 					@endif
 					{!! 
-						Form::open(['route' => 'admin.product.store'])
+						Form::open(['route' => 'admin.product.store','method' => 'POST',  'files' => true, 
+							'enctype' => 'multipart/form-data', 'class' => 'form-horizontal'])
 					!!}
 
 					<div class = "form-group">
@@ -59,32 +63,53 @@
 						!!}
 					</div>
 
-					<div class = "form-group">
-						<label for = "price">Precio:</label>
-						{!!
-							Form::number(
-								'price',
-								null, 
-								array(
-									'class' => 'form-control', 
-									'placeholder' => 'Ingrese el precio'
+					<div class="form-group">
+					 	<label for = "price">Precio:</label>
+					  	<div class="input-group">
+					    	<span class="input-group-addon">$</span>
+						    {!!
+								Form::number(
+									'price',
+									null, 
+									array(
+										'class' => 'form-control', 
+										'placeholder' => 'Ingrese el precio'
+									)
 								)
-							)
-						!!}
+							!!}
+						</div>
 					</div>
 
 					<div class = "form-group">
-						<label for = "image">URL de la imagen:</label>
-						{!!
-							Form::text(
-								'image',
-								null,
-								array(
-									'class' => 'form-control',
-									'placeholder' => 'Ingresa la url de la imagen...'
-								)
-							)
-						!!}	
+						<label for = "image">Imagen:</label>
+					  	<div class="input-group">
+					    	<span class="input-group-addon"><i class = "fa fa-file-image-o"></i></span>
+							
+							{!!
+								Form::file(
+									'image',
+									array(
+										'class' => 'form-control'
+										)
+									)
+							!!}	
+						</div>
+					</div>
+
+					<div class = "form-group">
+						<label for = "description_file">Cartilla:</label>
+					  	<div class="input-group">
+					    	<span class="input-group-addon"><i class = "fa fa-file-pdf-o"></i></span>
+							
+							{!!
+								Form::file(
+									'description_file',
+									array(
+										'class' => 'form-control'
+										)
+									)
+							!!}	
+						</div>
 					</div>
 
 					<div class = "form-group">
@@ -133,17 +158,11 @@
 					</div>
 
 					<div class = "form-group">
-						<label for = "visible"> Stock:</label>
+						<label for = "visible"> Visible:</label>
 						{!!
-							Form::select(
+							Form::checkbox(
 							'visible',
-							 array(
-							 	'1' => 'Si',
-							 	'0' => 'No'),
-							 null,
-							 array(
-									'class' => 'form-control',
-								)
+							 null
 							)
 						!!}
 					</div>

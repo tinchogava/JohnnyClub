@@ -31,8 +31,7 @@ class SaveProductRequest extends Request
             'category_id' => 'required',
             'varietal_id' => 'required',
             'winery_id' => 'required',
-
+            'image' => 'mimes:jpeg,bmp,png,gif',
         ];
     }
 }
-
