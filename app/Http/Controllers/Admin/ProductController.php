@@ -112,7 +112,10 @@ class ProductController extends Controller
         $description = $request->get('description') == null ? $product->description : $request->get('description');
         $size = $request->get('size') == null ? $product->size : $request->get('size');    
         $price = $request->get('price') == null ? $product->price : $request->get('price');
-        $image = $request->get('image') == "" || null ? 'img/no-image.png' : $request->get('image');
+        $image = $request->file('image') ? \Request::file('image') : null;
+        //dd($request->file('image'));
+        //$image = $request->file('image') == null ? $product->image : \Request::file('image');
+        //$description_file = $request->file('description_file') == null ? $product->description_file : \Request::file('description_file');
         $visible = $request->get('visible') == null ? 1 : $request->get('visible');
         $category_id = $request->get('category_id') == null ? $product->category_id : $request->get('category_id');
         $varietal_id = $request->get('varietal_id') == null ? $product->varietal_id : $request->get('varietal_id');
@@ -122,11 +125,14 @@ class ProductController extends Controller
             $product->description = $description;
             $product->size = $size;
             $product->price = $price;
-            $product->image = $image;
+            //$product->image = $image;
+            //$product->description_file = $description_file;
             $product->visible = $visible;
             $product->category_id = $category_id;
             $product->varietal_id = $varietal_id;
             $product->winery_id = $varietal_id;
+
+            
 
             $updated = $product->save();
 

@@ -197,6 +197,11 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::resource('admin/user', 'Admin\UserController');
 
+	Route::get('admin/orders', [
+		'as' => 'admin.order.index',
+		'uses' => 'Admin\OrderController@index'
+	]);
+
 	Route::post('backend', function() {
 		return view('auth.login');
 	});
@@ -213,5 +218,7 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('checkout/failurePayment', function(){
 		return view('store.failure');
 	});
+
+
   
 });

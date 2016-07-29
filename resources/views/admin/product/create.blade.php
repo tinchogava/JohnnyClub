@@ -51,16 +51,19 @@
 					</div>
 					<div class = "form-group">
 						<label for = "size">Tamaño:</label>
-						{!!
-							Form::number(
-								'size',
-								null, 
-								array(
-									'class' => 'form-control', 
-									'placeholder' => 'Tamaño del recipiente en cc'
+						<div class="input-group">
+					    	<span class="input-group-addon"><i class = "fa fa-glass"></i></span>
+							{!!
+								Form::number(
+									'size',
+									null, 
+									array(
+										'class' => 'form-control', 
+										'placeholder' => 'Tamaño del recipiente en cc'
+									)
 								)
-							)
-						!!}
+							!!}
+						</div>
 					</div>
 
 					<div class="form-group">

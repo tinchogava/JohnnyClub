@@ -43,7 +43,7 @@ class Product extends Model
 	public function setImageAttribute($image){
 
 	    if($image == null){
-	        		$this->attributes['image']= 'img/no-image.png';
+	        		$this->attributes['image'] = 'img/no-image.png';
 	        		return redirect()->route('admin.product.index')->with('message', 'Producto agregado sin Imagen');
 	        	} else {
 

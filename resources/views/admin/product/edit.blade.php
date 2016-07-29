@@ -60,45 +60,95 @@
 						!!}
 					</div>
 
-					<div class = "form-group">
-						<label for = "price">Precio:</label>
-						{!!
-							Form::number(
-								'price',
-								null, 
-								array(
-									'class' => 'form-control'
+					<div class="form-group">
+					 	<label for = "price">Precio:</label>
+					  	<div class="input-group">
+					    	<span class="input-group-addon">$</span>
+						    {!!
+								Form::number(
+									'price',
+									null, 
+									array(
+										'class' => 'form-control', 
+										'placeholder' => 'Ingrese el precio'
+									)
 								)
-							)
-						!!}
+							!!}
+						</div>
 					</div>
+					
 					<div class = "form-group">
 						<label for = "image">Imagen actual:</label>
 						<img class = "product-list" src="{{ asset($product->image) }}">
+
 					</div>
 					<div class = "form-group">
-						<label for = "visible"> Visible:</label>
+						<label for = "showContent"> Desea cambiar la Imagen?</label>
 						{!!
 							Form::checkbox(
-								'visible',
+								'showContent',
 								null,
+								false,
 								array(
-									'class' => 'form-control',
+									'class' => 'showContent',
+									'id' => 'showContent'
 								)
 							)
 						!!}
 					</div>
 
+					<div id = "content1" style="display: none;" class = "form-group">
+						<label  id = "content2" style="display: none;" for = "image">Nueva Imagen:</label>
+					  	<div  id = "content3" style="display: none;" class="input-group">
+					    	<span  id = "content4" style="display: none;" class="input-group-addon"><i class = "fa fa-file-image-o"></i></span>
+							
+							{!!
+								Form::file(
+									'image',
+									array(
+										'class' => 'form-control'
+										)
+									)
+							!!}	
+						</div>
+					</div>
+
 					<div class = "form-group">
-						<label for = "image">Nueva Imagen:</label>
+
+						<a href="{{route('primer-tasting', $product->id)}}" class = "btn btn-info">
+									Ver Cartilla
+								</a>
+					</div>
+
+					<div class = "form-group">
+						<label for = "showContent2"> Desea cambiar la Cartilla?</label>
 						{!!
-							Form::file(
-								'image',
+							Form::checkbox(
+								'showContent2',
+								null,
+								false,
 								array(
-									'class' => 'form-control'
+									'class' => 'showContent2',
+									'id' => 'showContent2'
 								)
 							)
 						!!}
+					</div>
+
+					<div id = "2content1" style="display: none;" class = "form-group">
+						<label id = "2content2" style="display: none;" for = "description_file">Nueva Cartilla:</label>
+					  	<div id = "2content3" style="display: none;" class="input-group">
+					    	<span id = "2content4" style="display: none;" class="input-group-addon"><i class = "fa fa-file-pdf-o"></i></span>
+							
+							{!!
+								Form::file(
+									'description_file',
+									array(
+										'class' => 'form-control'
+										)
+									)
+							!!}	
+						</div>
 					</div>
 
 					<div class = "form-group">
@@ -138,6 +188,19 @@
 							 null,
 							 array(
 									'class' => 'form-control'
+								)
+							)
+						!!}
+					</div>
+
+					<div class = "form-group">
+						<label for = "visible"> Visible:</label>
+						{!!
+							Form::checkbox(
+								'visible',
+								null,
+								array(
+									'class' => 'form-control',
 								)
 							)
 						!!}

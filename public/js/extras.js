@@ -19,8 +19,8 @@ $(document).ready(function() {
 	});
 
 	//$("#changeAddress").checkboxpicker();
-	$("#changeAddress").on( "click", function() {
-        check = document.getElementById("changeAddress");
+	$("#showContent").on( "click", function() {
+        check = document.getElementById("showContent");
         if (check.checked) {
         	for(i = 0; i < 100; i ++){
         		$('#content'+i).show();
@@ -29,6 +29,20 @@ $(document).ready(function() {
         else {
             for(i = 0; i < 100; i ++){
         		$('#content'+i).hide();
+        	}   
+        }
+    });
+
+    $("#showContent2").on( "click", function() {
+        check = document.getElementById("showContent2");
+        if (check.checked) {
+        	for(i = 0; i < 100; i ++){
+        		$('#2content'+i).show();
+        	}   
+        }
+        else {
+            for(i = 0; i < 100; i ++){
+        		$('#2content'+i).hide();
         	}   
         }
     });

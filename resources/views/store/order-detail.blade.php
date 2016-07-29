@@ -26,8 +26,17 @@
 					<tr>
 						<td colspan = "2">
 							<label for = "changeAddress"> ¿Desea cambiar la dirección del envío?&nbsp;</label>
-							<input type="checkbox" id = "changeAddress" class = "showContent">
-								
+							{!!
+							Form::checkbox(
+								'showContent',
+								null,
+								false,
+								array(
+									'class' => 'showContent',
+									'id' => 'showContent'
+								)
+							)
+						!!}	
 						</td>
 					</tr>
 					<tr id = "content1" style="display: none;">
@@ -77,14 +86,14 @@
 						@foreach($cart as $item)
 							<tr>
 								<td>{{ $item->name }}</td>
-								<td>{{ number_format($item->price, 2) }} </td>
+								<td>$ {{ number_format($item->price, 2) }} </td>
 								<td>{{ $item->quantity }} </td>
-								<td>{{ number_format($item->price * $item->quantity, 2) }}</td>
+								<td>$ {{ number_format($item->price * $item->quantity, 2) }}</td>
 						@endforeach
 					</table>
 					<h3><hr>
 						<span class ="label label-success">
-							Total: ${{ number_format($total, 2) }}
+							Total: $ {{ number_format($total, 2) }}
 						</span>
 					</h3></hr>
 					<p>
