@@ -16,7 +16,7 @@
 					@endif
 
 					{!!
-						Form::model($product, array('route' => array('admin.product.update', $product->id)))
+						Form::model($product, array('route' => array('admin.product.update', $product->id), 'files' => true))
 					!!}
 
 					<input type = "hidden" name = "_method" value = "PUT">
@@ -49,6 +49,8 @@
 					</div>
 					<div class = "form-group">
 						<label for = "size">Tamaño:</label>
+						<div class="input-group">
+					    	<span class="input-group-addon"><i class = "fa fa-glass"></i></span>
 						{!!
 							Form::number(
 								'size',
@@ -76,7 +78,7 @@
 							!!}
 						</div>
 					</div>
-					
+
 					<div class = "form-group">
 						<label for = "image">Imagen actual:</label>
 						<img class = "product-list" src="{{ asset($product->image) }}">
@@ -226,5 +228,5 @@
 			</div>
 		</div>
 	</div>
-
+</div>
 @stop

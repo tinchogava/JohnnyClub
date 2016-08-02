@@ -95,4 +95,28 @@ class Product extends Model
 				    }
 				}
 	}
+
+	public function updateImageAttribute($image){
+ 
+		        	$mime = $image->getMimeType();
+				    $extension = strtolower($image->getClientOriginalExtension());
+				    $fileName = uniqid().'.'.$extension;
+
+				    switch ($mime)
+				    {
+				        case "image/jpeg":
+				        case "image/png":
+				        case "image/gif":
+
+				            if ($image->isValid())
+				            {
+								\Storage::disk('image')->put($fileName, \File::get($image));
+								$this->attributes['image'] = 'img/products/'.$fileName;
+							}
+							break;
+				        default:
+				            return redirect()->route('admin.product.index')->with('error-message', 'Archivo NO Válido');
+				    }
+				
+	}
 }

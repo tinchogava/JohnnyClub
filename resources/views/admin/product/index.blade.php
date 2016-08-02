@@ -81,3 +81,74 @@
 		</div>
 	</div>
 @stop
+  <!-- Image Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      	<div class="modal-content">
+        	<div class="modal-header">
+          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+          		<h2 class="modal-title">Cambiar Imagen</h2>
+        	</div>
+        	<div class="modal-body">
+        		{!!  Form::model($product, array('route' => array('admin.product.update', $product), 'files' => true)) !!} 
+        		<input type = "hidden" name = "_method" value = "PUT">
+          		<div class = "form-group">
+					<label for = "image">Imagen:</label>
+					<div class="input-group">
+					   	<span class="input-group-addon"><i class = "fa fa-file-image-o"></i></span>		
+						{!!
+							Form::file(
+								'image',
+								array(
+									'class' => 'form-control'
+									)
+								)
+						!!}
+					</div>
+				</div>
+	        	
+        	</div>
+        	<div class="modal-footer">
+         	 	<button type="submit" class = "btn btn-primary"><i class = "fa fa-upload"  onClick = "this.form.submit()"></i> Subir</button>
+         	 	{!!
+	        		Form::close()
+	        	!!}
+        	</div>
+      	</div>
+    </div>
+</div>
+
+  <!-- File Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      	<div class="modal-content">
+        	<div class="modal-header">
+          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+          		<h2 class="modal-title">Cambiar Cartilla</h2>
+        	</div>
+        	<div class="modal-body">
+        		{!!
+        			Form::open(array('route' => array('admin.product.show', $product->id)))
+        		!!}
+        		<input type = "hidden" name = "_method" value = "PUT">
+          		<input type = "file" name = "description_file">
+          		
+        	</div>
+        	<div class="modal-footer">
+         	 	<button type="submit" class = "btn btn-primary"><i class = "fa fa-upload" onClick = "this.form.submit()"></i>Subir</button>
+          		{!!
+          			Form::close()
+          		!!}
+        	</div>
+      	</div>
+    </div>
+</div>
+
+  
+
+
+
+
+

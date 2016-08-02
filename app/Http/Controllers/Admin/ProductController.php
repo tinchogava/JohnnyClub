@@ -76,9 +76,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(Request $request)
     {
-        return $product;
+        return dd($request->file('image'));
     }
 
     /**
@@ -103,38 +103,104 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(SaveProductRequest $request, Product $product)
     {
-        
-        $product->fill($request->all());
 
-        $name = $request->get('name') == null ? $product->name : $request->get('name');
-        $description = $request->get('description') == null ? $product->description : $request->get('description');
-        $size = $request->get('size') == null ? $product->size : $request->get('size');    
-        $price = $request->get('price') == null ? $product->price : $request->get('price');
-        $image = $request->file('image') ? \Request::file('image') : null;
-        //dd($request->file('image'));
-        //$image = $request->file('image') == null ? $product->image : \Request::file('image');
-        //$description_file = $request->file('description_file') == null ? $product->description_file : \Request::file('description_file');
-        $visible = $request->get('visible') == null ? 1 : $request->get('visible');
-        $category_id = $request->get('category_id') == null ? $product->category_id : $request->get('category_id');
-        $varietal_id = $request->get('varietal_id') == null ? $product->varietal_id : $request->get('varietal_id');
-        $winery_id = $request->get('winery_id') == null ? $product->winery_id : $request->get('winery_id');
+        $product = Product::find($product->id);
+        
+        //$product->fill($request->all());
+
+        if ($request->get('name') == null) {
+            $product->name = $product->name;
+        } else {
+            $product->name = $request->get('name');
+        }
+
+      
+        if ($request->get('description') == null) {
+            $product->description = $product->description;
+        } else {
+            $product->description = $request->get('description');
+        }
+
+       
+        if ($request->get('size') == null) {
+            $product->size = $product->size;
+        } else {
+            $product->size = $request->get('size');
+        }
+
+       
+        if ($request->get('price') == null) {
+            $product->price = $product->price;
+        } else {
+            $product->price = $request->get('price');
+        }
+
+        if ($request->file('image') == null) {
+            
+        } else {
+            $product->image = \Request::file('image');
+        }
+
+        if ($request->file('description_file') == null) {
+            
+        } else {
+            $product->description_file = \Request::file('description_file');
+        }
+
+        if ($request->get('visible') == null) {
+            $product->visible = 1;
+        } else {
+            $product->visible = $request->get('visible');
+        }
+
+        if ($request->get('category_id') == null) {
+            $product->category_id = $product->category_id;
+        } else {
+            $product->category_id = $request->get('category_id');
+        }
+
+        if ($request->get('varietal_id') == null) {
+            $product->varietal_id = $product->varietal_id;
+        } else {
+            $product->varietal_id = $request->get('varietal_id');
+        }
+
+     
+        if ($request->get('winery_id') == null) {
+            $product->winery_id = $product->winery_id;
+        } else {
+            $product->winery_id = $request->get('winery_id');
+        }
+
+/*
+        $request->get('name') == null ? $product->name = $product->name : $product->name =$request->get('name');
+        $description = $request->get('description') == null ? $product->description = $product->description :  $product->description = $request->get('description');
+        $request->get('size') == null ? $product->size = $product->size : $product->size = $request->get('size');
+        $request->get('price') == null ? $product->price = $product->price : $product->price = $request->get('price');
+        $request->file('image') == null ? $product->image = $product->image : $product->image = \Request::file('image');
+        $request->file('description_file') == null ? $product->description_file = $product->description_file : $product->description_file = \Request::file('description_file');
+        $request->get('visible') == null ? $product->visible = 1 : $product->visible = $request->get('visible');
+        $request->get('category_id') == null ? $product->category_id = $product->category_id : $product->category_id = $request->get('category_id');
+        $request->get('varietal_id') == null ? $product->varietal_id = $product->varietal_id : $product->varietal_id = $request->get('varietal_id');
+        $request->get('winery_id') == null ? $product->winery_id = $product->winery_id : $product->winery_id = $request->get('winery_id');
+
             
             $product->name = $name;
             $product->description = $description;
             $product->size = $size;
             $product->price = $price;
-            //$product->image = $image;
-            //$product->description_file = $description_file;
+            $product->image = $image;
+            $product->description_file = $description_file;
             $product->visible = $visible;
             $product->category_id = $category_id;
             $product->varietal_id = $varietal_id;
             $product->winery_id = $varietal_id;
-
+*/
             
 
-            $updated = $product->save();
+        $updated = $product->save();
 
         $message = $updated ? 'Producto actualizado correctamente' : 'El Producto NO pudo ser actualizado';
         
