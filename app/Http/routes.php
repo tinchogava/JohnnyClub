@@ -181,7 +181,24 @@ Route::group(['middleware' => ['web']], function () {
 		'uses' => 'Auth\PasswordController@reset'
 	]);
 
-	//Admin Routes
+	//Return MercadoPago
+	Route::get('checkout/approvedPayment', function(){
+		return view('store.confirm');
+	});
+
+	Route::get('checkout/pendingPayment', function(){
+		return view('store.pending');
+	});
+
+	Route::get('checkout/failurePayment', function(){
+		return view('store.failure');
+	});
+
+	//Social Login Routes
+
+	Route::get('/redirect', 'SocialAuthController@redirect');
+
+	Route::get('/callback', 'SocialAuthController@callback');
 
 	Route::get('admin/home', function() {
 		return view('admin.home');
@@ -202,23 +219,9 @@ Route::group(['middleware' => ['web']], function () {
 		'uses' => 'Admin\OrderController@index'
 	]);
 
-	Route::post('backend', function() {
-		return view('auth.login');
-	});
-
-	//Return MercadoPago
-	Route::get('checkout/approvedPayment', function(){
-		return view('store.confirm');
-	});
-
-	Route::get('checkout/pendingPayment', function(){
-		return view('store.pending');
-	});
-
-	Route::get('checkout/failurePayment', function(){
-		return view('store.failure');
-	});
-
-
-  
 });
+
+
+	//Admin Routes
+
+	

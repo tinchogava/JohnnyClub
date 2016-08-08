@@ -17,7 +17,7 @@ class StoreController extends Controller
 							->orderBy('ranked', 'desc')
 							->take(8)
 							->get();
-	   	return view('store.index', compact('products'));
+	   	return view('store.index', compact('products', 'providerUser'));
 	}
 
 	public function show($id){

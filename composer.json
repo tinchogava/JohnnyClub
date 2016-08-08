@@ -10,7 +10,8 @@
         "mercadopago/sdk": "0.5.2",
         "livepixel/mercado-pago": "^1.0",
 	    "laravelcollective/html": "5.2.*",
-        "vsn4ik/bootstrap-checkbox": "dev-master"
+        "vsn4ik/bootstrap-checkbox": "dev-master",
+        "laravel/socialite": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

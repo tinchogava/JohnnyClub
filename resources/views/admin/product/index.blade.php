@@ -57,12 +57,12 @@
 						<td>{{ $product->category->name }}</td>
 						<td>{{ $product->varietal->name }}</td>
 						<td>{{ $product->winery->name }}</td>
-						<td>
+						<td class = "text-align: center">
 							<a href="{{ route('admin.product.edit', $product) }}" class = "btn btn-info">
 								<i class ="fa fa-pencil-square"></i>
 							</a>
 						</td>
-						<td>
+						<td class = "text-align: center">
 							{!! Form::open(['route' => ['admin.product.destroy', $product]]) !!}
 				       		<input type="hidden" name="_method" value="DELETE">
 				       		<button onClick="return confirm('Seguro que desea eliminar el producto {{ $product->name }}?')" class="btn btn-danger">
